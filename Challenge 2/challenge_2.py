@@ -18,7 +18,7 @@ def create_graph_obj_from_file(file_name):
 if __name__ == "__main__":
     g = create_graph_obj_from_file('graph_data.txt')
     print(g.bfs_shortest_path(sys.argv[1], sys.argv[2]))
-    print(g.num_of_edges_in_bfs(sys.argv[1], sys.argv[2]))
+    print(g.num_of_edges_in_bfs())
     print('\n================================================\n')
     print(create_graph_obj_from_file('graph_data.txt'))
     # for from_id in graph.vertList:

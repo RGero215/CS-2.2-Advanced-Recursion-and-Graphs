@@ -22,6 +22,7 @@ class Graph:
     def __init__(self):
         self.vertList = {} #dict of id key and vertex obj value
         self.numVertices = 0
+        self.bfs_num_edges = 0
     
     def __str__(self):
         result = ''
@@ -101,12 +102,13 @@ class Graph:
                     queue.append(new_path)
                     
                     if neighbour.id == end: # return new path if neighbour is end
+                        self.bfs_num_edges = len(neighbour.connectedTo)
                         return new_path
                 explored.append(vertex)
         return "Connecting path doesn't exist"
 
-    def num_of_edges_in_bfs(self, start, end):
-        return f'Number of edges in shortest path: {len(self.bfs_shortest_path(start, end))}'
+    def num_of_edges_in_bfs(self):
+        return f'Number of edges in shortest path: {self.bfs_num_edges}'
 
     
     def __iter__(self):
@@ -127,8 +129,8 @@ if __name__ == "__main__":
     print(g)
     print("BFS: ", g.bfs_connected_component(1))
     print("BFS Shortest Path: ", g.bfs_shortest_path(1, 5))
-    print(g.num_of_edges_in_bfs(1,5))
-    print(g.vertList)
+    print(g.num_of_edges_in_bfs())
+    # print(g.vertList)
 
 
     # g = Graph()
@@ -147,12 +149,12 @@ if __name__ == "__main__":
     # print("BFS: ", g.bfs_connected_component('A'))
     # print("BFS Shortest Path: ", g.bfs_shortest_path('G', 'D'))
 
-    d = Graph()
-    d.addEdge(1,2,10)
-    d.addEdge(1,4,5)
-    d.addEdge(2,3,5)
-    d.addEdge(2,4,7)
+    # d = Graph()
+    # d.addEdge(1,2,10)
+    # d.addEdge(1,4,5)
+    # d.addEdge(2,3,5)
+    # d.addEdge(2,4,7)
 
-    print(d.getVertices())
-    print(d)
+    # print(d.getVertices())
+    # print(d)
 
