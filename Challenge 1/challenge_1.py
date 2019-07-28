@@ -3,6 +3,7 @@ from graph2 import Graph
 import sys
 
 def read_graph_from_file(file_name):
+    '''Read graph from a file'''
     file = open(file_name, 'r') 
     file_list = file.readlines()
     vertices = file_list[1].rstrip().split(',')
@@ -38,6 +39,7 @@ def read_graph_from_file(file_name):
 
 
 def graph_data(graph):
+    '''Prints graph data'''
     print(f"# Vertices: {graph.size}")
     print(f"# Edges: {len(graph.get_edge_list())}")
     print("Edge List:")
