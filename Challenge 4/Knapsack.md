@@ -16,6 +16,10 @@ The items included in the knapsack for this optimal solution are
 # Run
 python3 knapsack.py
 
+
+# Video checking it works
+https://youtu.be/otP8puv9fNE
+
 # 5 Steps of Dynamic Programming applied to Knapsack Problem
 
 ### 1 Identify the subproblems 
